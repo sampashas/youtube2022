@@ -1,3 +1,17 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+:root {
+    --white: #fff;
+    --black: #000;
+	--root: #00ffbb;
+    --primary: #005fd3;
+    --secondary: #d31500;
+	--anim: cubic-bezier(1,-0.01,0,.99); 
+}
