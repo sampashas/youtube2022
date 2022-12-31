@@ -9,10 +9,10 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 
 function Navbar() {
   return (
-    <div className="flex gap-2 w-full items-center justify-between px-6 py-4">
+    <div className="grid grid-cols-3 gap-2 w-full items-center justify-between px-6 py-4">
       {' '}
       {/* left */}
-      <div className="flex w-[33.3vw] gap-4">
+      <div className="flex col-span-1 gap-4">
         {/* lang + price */}
         <div className="flex">
           <span>Eng</span>
@@ -47,11 +47,13 @@ function Navbar() {
         </ul>
       </div>
       {/* center */}
-      <Link to="/">
-        <span className="text-xl">App/Market</span>
-      </Link>
+      <div className="flex col-span-1 justify-center">
+        <Link to="/">
+          <span className="text-xl">App/Market</span>
+        </Link>
+      </div>
       {/* right */}
-      <div className="flex w-[33.3vw] justify-end gap-6">
+      <div className="flex col-span-1 justify-end gap-6">
         {/* links */}
         <ul className="flex gap-6">
           <li>
