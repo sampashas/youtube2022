@@ -1,18 +1,18 @@
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 // pages
-import Home from './pages/Home/Home'
-import Product from './pages/Product/Product'
-import Products from './pages/Products/Products'
+import Home from './pages/Home'
+import Product from './pages/Product'
+import Products from './pages/Products'
 // components
-import Navbar from './components/Navbar/Navbar'
-import Footer from './components/Footer/Footer'
+import Header from './components/Header'
+import Footer from './components/Footer'
 // style
 import './style.css'
 
 const Layout = () => {
   return (
     <div className="app">
-      <Navbar />
+      <Header />
       <Outlet />
       <Footer />
     </div>
