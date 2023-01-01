@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import EastOutlinedIcon from '@mui/icons-material/EastOutlined'
 import WestOutlinedIcon from '@mui/icons-material/WestOutlined'
@@ -18,6 +18,13 @@ function Slider() {
   const nextSlide = () => {
     setCurrentSlide(currentSlide === 2 ? 0 : (prev) => prev + 1)
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((currentSlide + 1) % data)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [currentSlide])
 
   return (
     <div className="h-[calc(100vh - 80px)] w-[100vw] relative overflow-hidden">

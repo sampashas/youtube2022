@@ -20,7 +20,6 @@ function FeaturedProducts({ type }) {
         'https://images.unsplash.com/photo-1505846951821-e25bacf2eccd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
       title: 'Coat',
       isNew: false,
-
       price: 12,
     },
     {
