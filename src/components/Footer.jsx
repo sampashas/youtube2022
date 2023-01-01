@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <div className="grid grid-cols-2 w-full bg-gray-100 px-36 py-2">
+    <div className="grid grid-cols-2 w-full bg-gray-100 px-48 py-6">
       <div className="flex flex-col justify-between gap-12">
         {/* 2 columns */}
         <div className="grid grid-cols-2">
@@ -71,17 +71,18 @@ function Footer() {
           </div>
         </div>
         {/* copyright */}
-        <div className="flex items-center gap-3">
-          <h4>App/Market</h4>
-          <span className="text-xs">© Copyright 2023 All Rights Reserved</span>
+        <div className="flex items-end gap-3">
+          <span className="text-xs pb-2">
+            App/Market © Copyright 2023 All Rights Reserved
+          </span>
         </div>
       </div>
       <div className="flex flex-col justify-between gap-12">
         {/* 2 columns */}
         <div className="grid grid-cols-2">
           <div className="flex flex-col gap-2 col-span-1">
-            <h4 className="text-2xl">About</h4>
-            <p className="text-xs w-32 opacity-75">
+            <h4 className="text-2xl ">About</h4>
+            <p className="text-xs w-28 opacity-75">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
               error cum accusamus dignissimos quis unde dolore eum ullam quia
               incidunt pariatur atque nobis harum sint, mollitia officiis
