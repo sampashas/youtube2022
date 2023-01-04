@@ -21,3 +21,9 @@ h2 {
     font-weight: 600;
     font-size: medium;
 }
+
+@layer components {
+    .button {
+        @apply duration-300 text-white w-fit px-6 h-12 whitespace-nowrap absolute top-0 bottom-0 left-0 right-0 m-auto bg-black hover:bg-[var(--primary)] 
+    }
+}

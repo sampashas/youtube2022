@@ -9,7 +9,7 @@ function Card({ item }) {
   return (
     <Link to={`/product/${item.id}`}>
       <div
-        className="w-[240px] flex flex-col"
+        className="w-[240px] pb-12 flex gap-2 flex-col"
         onMouseEnter={() => {
           isHover(true)
         }}
@@ -17,6 +17,7 @@ function Card({ item }) {
           isHover(false)
         }}
       >
+        {/* new season */}
         <div className="w-full h-96 overflow-hidden relative">
           {item.isNew && (
             <span className="absolute left-2 top-2 rounded-full border border-black px-2 z-[3]">
@@ -37,10 +38,14 @@ function Card({ item }) {
             />
           )}
         </div>
-        <h2>{item.title}</h2>
-        <div className="flex gap-3">
-          {item.oldPrice && <h3 className="line-through">${item.oldPrice}</h3>}
-          <h3>${item.price}</h3>
+        <div className="flex flex-col">
+          <h2>{item.title}</h2>
+          <div className="flex gap-3 w-full">
+            {item.oldPrice && (
+              <h3 className="line-through">${item.oldPrice}</h3>
+            )}
+            <h3>${item.price}</h3>
+          </div>
         </div>
       </div>
     </Link>

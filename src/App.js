@@ -8,6 +8,9 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 // style
 import './style.css'
+import About from './pages/About'
+import Contacts from './pages/Contacts'
+import Stores from './pages/Stores'
 
 const Layout = () => {
   return (
@@ -27,6 +30,18 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/contacts',
+        element: <Contacts />,
+      },
+      {
+        path: '/stores',
+        element: <Stores />,
       },
       {
         path: '/products/:id',

@@ -24,88 +24,93 @@ function Product() {
   ]
 
   return (
-    <div className="flex px-6 gap-4 flex-row">
-      <div className="left flex-1 flex gap-4">
-        <div className="flex-1 flex flex-col gap-1">
-          {images.map((item, index) => (
-            <img
-              className="w-full h-[150px] object-cover cursor-pointer mb-3"
-              src={item.img}
-              onClick={(e) => setSelectedImg(index)}
-              alt=""
-            />
-          ))}
-        </div>
-        <div className="flex-[5]">
-          <img
-            src={images[selectedImg].img}
-            alt=""
-            onClick={() => setIsModalOpen(true)}
-          />
-        </div>
-        {isModalOpen && (
-          <Modal
-            onClose={() => setIsModalOpen(false)}
-            images={images}
-            selectedImg={selectedImg}
-            setSelectedImg={setSelectedImg}
-          />
-        )}
+    <div className="flex flex-col pb-48">
+      <div className="flex gap-4">
+        <div className="flex flex-1" />
       </div>
-      <div className="right flex-1 flex flex-col gap-6 pb-32">
-        <div className="flex gap-4">
-          <span className="price text-4xl">$123</span>
-          <h1 className="font-light text-4xl">Doggy sleps one piece</h1>
+      <div className="flex px-6 gap-4 flex-row">
+        <div className="left flex-1 flex gap-4">
+          <div className="flex-1 flex flex-col gap-1">
+            {images.map((item, index) => (
+              <img
+                className="w-full h-[150px] object-cover cursor-pointer mb-3"
+                src={item.img}
+                onClick={(e) => setSelectedImg(index)}
+                alt=""
+              />
+            ))}
+          </div>
+          <div className="flex-[5]">
+            <img
+              src={images[selectedImg].img}
+              alt=""
+              onClick={() => setIsModalOpen(true)}
+            />
+          </div>
+          {isModalOpen && (
+            <Modal
+              onClose={() => setIsModalOpen(false)}
+              images={images}
+              selectedImg={selectedImg}
+              setSelectedImg={setSelectedImg}
+            />
+          )}
         </div>
-        <p className="w-[80%]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero optio
-          ipsum quibusdam rem, dolores perspiciatis maxime ab quisquam. Itaque
-          temporibus officiis quaerat dolore neque possimus nesciunt maiores nam
-          quas consequatur?
-        </p>
-        {/* quantity */}
-        <div className="flex gap-12 items-center">
-          <button
-            className="bg-[var(--normal)] w-full h-14 flex items-center justify-center"
-            onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
-          >
-            -
-          </button>
-          {quantity}
-          <button
-            className="bg-[var(--normal)] w-full h-14 flex items-center justify-center"
-            onClick={() => setQuantity((prev) => prev + 1)}
-          >
-            +
-          </button>
-        </div>
-        {/* buttons */}
-        <div className="flex flex-col gap-2">
-          <button className="bg-[var(--primary)] text-white w-full h-14 flex border items-center whitespace-nowrap gap-2 justify-center">
-            <AddShoppingCartIcon />
-            Add to card
-          </button>
-          <div className="flex gap-2">
-            <div className="w-full cursor-pointer h-14 flex border items-center whitespace-nowrap gap-2 justify-center">
-              <FavoriteBorderIcon /> Add to wish list
-            </div>
-            <div className="flex cursor-pointer w-full h-14 border items-center whitespace-nowrap gap-2 justify-center">
-              <BalanceIcon /> Add to compare
+        <div className="right flex-1 flex flex-col gap-6 pb-32">
+          <div className="flex flex-1 gap-2 flex-col">
+            <h2 className="text-2xl font-medium">Doggy sleps one piece</h2>
+            <span className="price text-xl">$123</span>
+          </div>
+          <p className="w-[80%]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero optio
+            ipsum quibusdam rem, dolores perspiciatis maxime ab quisquam. Itaque
+            temporibus officiis quaerat dolore neque possimus nesciunt maiores
+            nam quas consequatur?
+          </p>
+
+          <div className="flex flex-col opacity-50">
+            <span>Vendor: Polo</span>
+            <span>Product type: T-shirt</span>
+            <span>Tag: T-shirt, Women, Top</span>
+          </div>
+          <hr />
+          <div className="flex flex-col">
+            <h4 className="text-2xl ">Links</h4>
+            <span>Description</span>
+            <span>Additional information</span>
+            <span>FAQ</span>
+          </div>
+          {/* quantity */}
+          <div className="flex justify-center gap-8 items-center">
+            <button
+              className="bg-[var(--normal)] w-14 h-14 flex items-center justify-center"
+              onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
+            >
+              -
+            </button>
+            {quantity}
+            <button
+              className="bg-[var(--normal)] w-14 h-14 flex items-center justify-center"
+              onClick={() => setQuantity((prev) => prev + 1)}
+            >
+              +
+            </button>
+          </div>
+          {/* buttons */}
+          <div className="flex flex-col gap-2">
+            <button className="bg-[var(--primary)] text-white w-full h-14 flex border items-center whitespace-nowrap gap-2 justify-center">
+              <AddShoppingCartIcon />
+              Add to card
+            </button>
+            <div className="flex gap-2">
+              <div className="w-full cursor-pointer h-14 flex border items-center whitespace-nowrap gap-2 justify-center">
+                <FavoriteBorderIcon /> Add to wish list
+              </div>
+              <div className="flex cursor-pointer w-full h-14 border items-center whitespace-nowrap gap-2 justify-center">
+                <BalanceIcon /> Add to compare
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="flex flex-col opacity-50">
-          <span>Vendor: Polo</span>
-          <span>Product type: T-shirt</span>
-          <span>Tag: T-shirt, Women, Top</span>
-        </div>
-        <hr />
-        <div className="flex flex-col">
-          <h4 className="text-2xl ">Links</h4>
-          <span>Description</span>
-          <span>Additional information</span>
-          <span>FAQ</span>
         </div>
       </div>
     </div>

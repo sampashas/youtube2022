@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Card from './Card'
 
 function FeaturedProducts({ type }) {
@@ -44,11 +44,13 @@ function FeaturedProducts({ type }) {
     },
   ]
 
+  const cardRef = useRef(null)
+
   return (
     <div className="flex flex-col px-48 py-12">
-      <div className="flex mb-12">
-        <h2 className="text-2xl w-1/4 font-bold">{type} products</h2>
-        <p className="w-3/4 text-gray-500">
+      <div className="flex flex-col items-center mb-12 gap-6">
+        <h2 className="text-xl">{type} products</h2>
+        <p className="w-3/4 text-gray-500 text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem adipisci
           odit sapiente, facilis ullam officiis amet, pariatur quae expedita
           corporis similique sit, voluptatem voluptas doloremque perspiciatis
