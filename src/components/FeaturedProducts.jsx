@@ -55,7 +55,7 @@ function FeaturedProducts({ type }) {
           ipsum tempore! Eveniet, in.
         </p>
       </div>
-      <div className="flex justify-center gap-5">
+      <div className="flex justify-center gap-5 flex-wrap">
         {data.map((item) => (
           <Card item={item} key={item.id} />
         ))}

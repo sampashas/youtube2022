@@ -9,7 +9,7 @@ function Card({ item }) {
   return (
     <Link to={`/product/${item.id}`}>
       <div
-        className="w-[240px] flex flex-col gap-3"
+        className="w-[240px] flex flex-col"
         onMouseEnter={() => {
           isHover(true)
         }}

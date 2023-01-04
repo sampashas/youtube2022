@@ -9,16 +9,18 @@ import { Link } from 'react-router-dom'
 
 function Newseller() {
   return (
-    <div className="contact bg-[var(--primary)] flex justify-center">
+    <div className="contact bg-gray-100 flex justify-center">
       <div className="w-1/2 flex items-center justify-between p-12">
         <span>Be in touch with us:</span>
         <div className="mail flex gap-2">
           <input
-            className="pl-6 bg-[none] border-none"
+            className="pl-5 bg-[none] border-none"
             type="text"
             placeholder="Enter your e-mail..."
           />
-          <button className="border text-white px-4 py-2">Join us</button>
+          <button className="bg-[var(--primary)] text-white px-5 py-2">
+            Join us
+          </button>
         </div>
         <div className="flex gap-4">
           <Link to="/">
