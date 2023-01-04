@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <div className="grid grid-cols-2 w-ful px-48 py-6">
+    <div className=" grid grid-cols-2 w-ful px-48 py-6">
       <div className="flex flex-col justify-between gap-12">
         {/* 2 columns */}
         <div className="grid grid-cols-2">
@@ -82,7 +82,7 @@ function Footer() {
         <div className="grid grid-cols-2">
           <div className="flex flex-col gap-2 col-span-1">
             <h4 className="text-2xl ">About</h4>
-            <p className="text-xs w-28 opacity-75">
+            <p className="z-[-1] text-xs w-28 opacity-75">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
               error cum accusamus dignissimos quis unde dolore eum ullam quia
               incidunt pariatur atque nobis harum sint, mollitia officiis

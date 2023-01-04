@@ -24,11 +24,11 @@ function FeaturedProducts({ type }) {
     },
     {
       id: 3,
-      img:
-        'https://images.unsplash.com/photo-1592301945141-e2074718b711?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
       img2:
-        'https://images.unsplash.com/photo-1589465885857-44edb59bbff2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
-      title: 'Hat',
+        'https://images.unsplash.com/photo-1672753755413-5a6e9ef81e01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80',
+      img:
+        'https://images.unsplash.com/photo-1672753755304-140359dc739a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80',
+      title: 'Glass',
       isNew: false,
       oldPrice: 19,
       price: 12,
