@@ -124,8 +124,8 @@ function Modal({ images, selectedImg, setSelectedImg, onClose }) {
   }
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content" onWheel={handleScroll}>
+    <div className="z-[2] w-[50vw]">
+      <div className="w-[]" onWheel={handleScroll}>
         <img src={images[selectedImg].img} onClick={onClose} alt="" />
       </div>
     </div>

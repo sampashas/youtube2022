@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
@@ -6,10 +6,12 @@ import SearchIcon from '@mui/icons-material/Search'
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
+import Cart from './Cart'
 
 function Navbar() {
+  const [open, setOpen] = useState(false)
   return (
-    <div className="grid grid-cols-3 gap-2 w-full items-center justify-between px-6 py-4">
+    <div className="grid grid-cols-3 gap-2 w-full items-center px-6 py-6">
       {' '}
       {/* left */}
       <div className="flex col-span-1 gap-4">
@@ -55,7 +57,7 @@ function Navbar() {
       {/* right */}
       <div className="flex col-span-1 justify-end gap-6">
         {/* links */}
-        <ul className="flex gap-6">
+        <ul className="flex gap-4">
           <li>
             <Link to="/">
               <span>Homepage</span>
@@ -82,7 +84,10 @@ function Navbar() {
           <SearchIcon />
           <PersonOutlineIcon />
           <FavoriteBorderIcon />
-          <div className="flex relative">
+          <div
+            className="flex relative cursor-pointer"
+            onClick={() => setOpen(!open)}
+          >
             <ShoppingCartOutlinedIcon />
             <div className="absolute left-3 bottom-3 w-5 h-5 bg-[var(--primary)] rounded-full flex justify-center items-center">
               <span className="text-xs text-white">0</span>
@@ -90,6 +95,7 @@ function Navbar() {
           </div>
         </div>
       </div>
+      {open && <Cart />}
     </div>
   )
 }

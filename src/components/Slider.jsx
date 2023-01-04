@@ -12,13 +12,6 @@ function Slider() {
 
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? 2 : (prev) => prev - 1)
-  }
-  const nextSlide = () => {
-    setCurrentSlide(currentSlide === 2 ? 0 : (prev) => prev + 1)
-  }
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((currentSlide + 1) % data.length)
@@ -26,27 +19,39 @@ function Slider() {
     return () => clearInterval(interval)
   }, [currentSlide])
 
+  const handleClick = (event) => {
+    const { clientX } = event
+    const screenWidth = window.innerWidth
+
+    if (clientX < screenWidth / 2) {
+      setCurrentSlide(currentSlide === 0 ? data.length - 1 : (prev) => prev - 1)
+    } else {
+      setCurrentSlide(currentSlide === data.length - 1 ? 0 : (prev) => prev + 1)
+    }
+  }
+
   return (
-    <div className="h-[calc(100vh - 80px)] w-[100vw] relative overflow-hidden">
+    <div
+      className="h-[calc(100vh - 80px)] w-[100vw] relative overflow-hidden"
+      onClick={handleClick}
+    >
       <div
         className="flex w-[300vw] h-screen transition-[var(--anim)] duration-1000"
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
       >
-        <img className="w-[100vw] object-cover h-screen" src={data[0]} alt="" />
-        <img className="w-[100vw] object-cover h-screen" src={data[1]} alt="" />
-        <img className="w-[100vw] object-cover h-screen" src={data[2]} alt="" />
+        {data.map((imageUrl) => (
+          <img
+            className="w-[100vw] object-cover h-screen"
+            src={imageUrl}
+            alt=""
+          />
+        ))}
       </div>
       <div className="gap-2 w-fit flex justify-center absolute left-0 right-0 m-auto bottom-24">
-        <div
-          onClick={prevSlide}
-          className=" cursor-pointer w-12 h-12 border-2 flex items-center justify-center"
-        >
+        <div className="cursor-pointer w-12 h-12 border-2 flex items-center justify-center transition-opacity duration-200 ease-in-out">
           <WestOutlinedIcon />
         </div>
-        <div
-          onClick={nextSlide}
-          className=" cursor-pointer w-12 h-12 border-2 flex items-center justify-center"
-        >
+        <div className="cursor-pointer w-12 h-12 border-2 flex items-center justify-center transition-opacity duration-200 ease-in-out">
           <EastOutlinedIcon />
         </div>
       </div>
