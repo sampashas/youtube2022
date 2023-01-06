@@ -33,6 +33,7 @@ function Product() {
           <div className="flex-1 flex flex-col gap-1">
             {images.map((item, index) => (
               <img
+                key={index}
                 className="w-full h-[150px] object-cover cursor-pointer mb-3"
                 src={item.img}
                 onClick={(e) => setSelectedImg(index)}

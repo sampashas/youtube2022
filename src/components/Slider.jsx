@@ -41,6 +41,7 @@ function Slider() {
       >
         {data.map((imageUrl) => (
           <img
+            key={imageUrl}
             className="w-[100vw] object-cover h-screen"
             src={imageUrl}
             alt=""

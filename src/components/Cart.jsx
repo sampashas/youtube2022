@@ -30,7 +30,7 @@ function Cart() {
     setData(data.filter((item) => item.id !== id))
   }
   return (
-    <div className="w-[30vw] flex flex-col gap-6 p-6 fixed right-5 top-20 z-20 bg-white">
+    <div className="w-[30vw] flex flex-col gap-6 p-6 fixed right-5 top-20 z-20 bg-[#f1f1f1f4] backdrop-blur-xl">
       <h2>Products in your cart</h2>
       {data?.map((item) => (
         <div className="flex flex-row gap-4" key={item.id}>
