@@ -46,7 +46,7 @@ function FeaturedProducts({ type }) {
     },
   ]
 
-  const [products, setProducts] = useState([])
+  // const [products, setProducts] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,7 +67,7 @@ function FeaturedProducts({ type }) {
     fetchData()
   }, [])
 
-  const cardRef = useRef(null)
+  // const cardRef = useRef(null)
 
   return (
     <div className="flex flex-col px-48 py-12">
