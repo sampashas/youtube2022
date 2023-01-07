@@ -55,7 +55,7 @@ function FeaturedProducts({ type }) {
           process.env.REACT_APP_API_URL + '/products',
           {
             headers: {
-              Authorization: 'bearer' + process.env.REACT_APP_API_TOKEN,
+              Authorization: 'bearer ' + process.env.REACT_APP_API_TOKEN,
             },
           },
         )
